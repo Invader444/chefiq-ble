@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chefiq-ble"
+version = "1.0.0"
+description = "Passive BLE advertisement parser for Chef iQ wireless probes (CQ50/CQ60)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "chefiq-ble contributors" }]
+keywords = ["bluetooth", "ble", "chefiq", "chef iq", "thermometer", "home-assistant"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Home Automation",
+    "Typing :: Typed",
+]
+dependencies = [
+    "bluetooth-data-tools>=1.19.0",
+    "bluetooth-sensor-state-data>=1.6.1",
+    "home-assistant-bluetooth>=1.10.0",
+    "sensor-state-data>=2.1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/Invader444/chefiq-ble"
+Repository = "https://github.com/Invader444/chefiq-ble"
+Issues = "https://github.com/Invader444/chefiq-ble/issues"
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "pytest-cov>=5.0", "mypy>=1.10", "ruff>=0.5"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chefiq_ble"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=chefiq_ble --cov-report=term-missing"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+show_error_codes = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "PL", "RUF"]
+# PLR2004: 2-byte int16 widths / offsets read inline are self-explanatory.
+ignore = ["PLR2004"]
