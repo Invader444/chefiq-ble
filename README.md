@@ -5,7 +5,7 @@ cooking probes (CQ50 / CQ60), built for use with the Home Assistant
 `bluetooth` passive update framework.
 
 The probe broadcasts everything needed to read temperatures over plain BLE
-advertisements — no connection, no cloud, no base/hub required.
+advertisements - no connection, no cloud, no base/hub required.
 
 ## Install
 
@@ -46,8 +46,8 @@ All 16-bit temperatures are signed, little-endian, divided by 10 (Celsius).
 Three temperature-payload layouts are supported, selected by the protocol
 version carried in the advertisement:
 
-- **V3** — verified against a CQ60 (protocol version 5.0.0).
-- **V2** and **legacy** — supported from the protocol description but
+- **V3** - verified against a CQ60 (protocol version 5.0.0).
+- **V2** and **legacy** - supported from the protocol description but
   **not yet verified against real hardware**. Captures from a CQ50 or an
   older-firmware probe are welcome to confirm the layouts and the version
   dispatch boundaries.
