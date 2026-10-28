@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "chefiq-ble"
-version = "1.0.1"
+version = "1.1.0"
 description = "Passive BLE advertisement parser for Chef iQ wireless probes (CQ50/CQ60)"
 readme = "README.md"
 license = { text = "MIT" }
@@ -33,7 +33,7 @@ Repository = "https://github.com/Invader444/chefiq-ble"
 Issues = "https://github.com/Invader444/chefiq-ble/issues"
 
 [project.optional-dependencies]
-test = ["pytest>=8.0", "pytest-cov>=5.0", "mypy>=1.10", "ruff>=0.5"]
+test = ["pytest>=8.0", "pytest-cov>=5.0", "mypy>=1.10", "ruff>=0.16"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/chefiq_ble"]
