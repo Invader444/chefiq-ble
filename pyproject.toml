@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "chefiq-ble"
-version = "1.1.0"
-description = "Passive BLE advertisement parser for Chef iQ wireless probes (CQ50/CQ60)"
+version = "1.1.1"
+description = "Passive BLE advertisement parser for Chef iQ wireless probes (CQ60)"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"

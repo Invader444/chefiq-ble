@@ -124,7 +124,6 @@ _TIP_SENSORS = (
 class Models(Enum):
     """Known Chef iQ probe models."""
 
-    CQ50 = auto()
     CQ60 = auto()
 
 
@@ -207,7 +206,7 @@ def _signed_temp(msg: bytes, offset: int) -> float:
 def _known_model(advertised_name: str | None) -> str | None:
     """Return the probe model named in the advertised local name, if any."""
     name = (advertised_name or "").upper()
-    for model in (Models.CQ60, Models.CQ50):
+    for model in Models:
         if model.name in name:
             return model.name
     return None

@@ -1,7 +1,7 @@
 # chefiq-ble
 
 Passive Bluetooth Low Energy advertisement parser for **Chef iQ** wireless
-cooking probes (CQ50 / CQ60), built for use with the Home Assistant
+cooking probes (CQ60), built for use with the Home Assistant
 `bluetooth` passive update framework.
 
 The probe broadcasts everything needed to read temperatures over plain BLE
@@ -78,9 +78,9 @@ major version carried in the advertisement:
 | 2, 3 | **legacy** - MAC, SoC, food and ambient inline; battery from 3.x | none |
 
 V2 and legacy are supported from the protocol description and are **not yet
-verified against real hardware**; captures from a CQ50 or an older-firmware
-probe are welcome to confirm the layouts and the version boundaries. Other
-major versions are not known probe protocols and are ignored.
+verified against real hardware**; captures from an older-firmware probe are
+welcome to confirm the layouts and the version boundaries. Other major
+versions are not known probe protocols and are ignored.
 
 This library decodes the probe's public BLE advertisements for
 interoperability and builds on the earlier Chef iQ work in

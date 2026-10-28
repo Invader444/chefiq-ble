@@ -260,6 +260,7 @@ def test_name_packet_accepted_on_known_local_name() -> None:
     garbage = _name_packet("0003b9400801020304050607")
     assert _supported(garbage, name="CQ60")
     assert not _supported(garbage, name="sps")
+    assert not _supported(garbage, name="CQ50")
 
 
 def test_name_packet_too_short_is_rejected() -> None:
@@ -337,9 +338,9 @@ def test_other_manufacturer_ignored() -> None:
 
 def test_model_from_name() -> None:
     device = ChefIqBluetoothDeviceData()
-    device.update(_service_info(V3_TEMPERATURE, name="CQ50"))
+    device.update(_service_info(V3_TEMPERATURE, name="cq60"))
     assert device.get_device_name() is not None
-    assert "CQ50" in (device.title or "")
+    assert device.title == "CQ60 079A"
 
 
 def test_unknown_name_falls_back_to_cq60() -> None:
